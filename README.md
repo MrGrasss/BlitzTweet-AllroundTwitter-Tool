@@ -1,4 +1,4 @@
-![Screenshot_2](https://github.com/MrGrasss/BlitzTweet---Allround-Twitter-Tool/assets/132838549/302423e8-13a6-4a73-bd4c-f9009b10dee7)
+![Screenshot_1](https://github.com/MrGrasss/BlitzTweet-AllroundTwitter-Tool/assets/132838549/db31b208-8707-4359-a337-ce46c5d7cde0)
 
 # BlitzTweet
 
@@ -16,6 +16,7 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 - Tweet Replier
 - Mass Follower
 - Mass Retweeter
+- Mass Post Shiller
 
 ## Future:
 
@@ -34,11 +35,13 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
   
 - **Tokens:** Format should be either:
   - `username:pass:email:auth:ct0`
-  - `ct0:auth`
+  - `auth:ct0`
   
 - **Files:** 
   - `mass_replies/keywords.txt` expects one keyword per line.
   - `replies/comments.txt` expects one comment per line; ensure you have more comments than clients.
+  - `post_shiller/usernames.txt` expects one username per line; one client will listen to one username.
+  - `post_shiller/comments.txt` expects one comment per line; same comments won't get reused so make sure to have a lot.
 
 - **Removed Tokens:** Saved in `acc_checker/removed_tokens.txt`.
 - **Locked Tokens:** Saved in `acc_checker/locked_tokens.txt`.
@@ -60,6 +63,7 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 
 - **Mass Follower:** Follow multiple accounts in bulk.
 - **Mass Retweeter:** Retweet tweets in bulk.
+- **Mass Post Shiller:** Listens to new posts and shills mass comments to them
 
 ## Suggestions / Feedback
 
