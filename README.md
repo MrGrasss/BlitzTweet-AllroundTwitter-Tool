@@ -59,10 +59,11 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 
 - **Tweet Liker:** Automatically like tweets.
 - **Tweet Replier:** Reply to tweets based on specified keywords.
-- **Mass Tweet Replier:** Reply to multiple tweets in bulk.
+
 
 ## Mass Actions
 
+- **Mass Tweet Replier:** Bulk reply to multiple tweets fetched by keywords set in mass_replies/keywords.tx.
 - **Mass Follower:** Follow multiple accounts in bulk.
 - **Mass Retweeter:** Retweet tweets in bulk.
 - **Mass Posts Shiller:** Listens to new posts and shills mass comments to them and likes + rts these comments with idle accounts.
