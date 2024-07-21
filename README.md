@@ -1,4 +1,4 @@
-![Screenshot_1](https://github.com/MrGrasss/BlitzTweet-AllroundTwitter-Tool/assets/132838549/db31b208-8707-4359-a337-ce46c5d7cde0)
+![Screenshot_1](https://github.com/user-attachments/assets/eddc7483-e059-49de-bfae-266c88ff932d)
 
 ---
 
@@ -19,6 +19,7 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 - Mass Follower
 - Mass Retweeter
 - Mass Posts Shiller
+- Client Checker
 
 ## Future:
 
