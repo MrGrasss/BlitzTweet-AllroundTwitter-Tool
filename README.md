@@ -1,4 +1,4 @@
-![Screenshot_1](https://github.com/user-attachments/assets/7b180059-908e-4902-9f32-4a90aa26f9b4)
+![image](https://github.com/user-attachments/assets/480c2f83-beb3-4927-b1c1-2bac933df931)
 
 ---
 
@@ -20,6 +20,7 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 - Mass Retweeter
 - Mass Posts Shiller
 - Client Checker
+- Equal Follower
 
 ## Future:
 
@@ -39,6 +40,7 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 - **Tokens:** Format should be either:
   - `username:pass:email:auth:ct0`
   - `auth:ct0`
+  - `auth`
   
 - **Files:** 
   - `mass_replies/keywords.txt` expects one keyword per line.
@@ -119,6 +121,33 @@ The Mass Posts Shiller feature automates the process of monitoring new posts fro
 4. Ensure your proxies and tokens are configured properly.
 
 5. Run the Mass Posts Shiller and let it handle the rest!
+
+## Equal Follower
+
+**Description:**
+
+The Equal Follower feature allows you to distribute a list of usernames across multiple Twitter accounts, 
+ensuring that each account follows a unique set of users without any overlap. 
+
+**How It Works:**
+
+1. **Upload Usernames:**
+   - Fill equal_follower/usernames.txt with the usernames you want to follow. (1 per line) 
+
+2. **Set Parameters:**
+   - Specify the number of tokens (Twitter accounts) to use.
+   - Define the number of usernames each token should follow.
+
+3. **Distribute Follows:**
+   - The Equal Follower will allocate usernames to each account sequentially, ensuring no duplicates.
+
+**Usage Example:**
+- You have a usernames.txt file of 500 usernames.
+- You want to use 10 accounts, each following 50 users.
+- Equal Follower will ensure each of the 10 accounts follows a unique set of 50 users.
+
+**Caution**
+- A fresh account can follow up to 50 people per day and a warmed up account up to 80. 
 
 ## Suggestions / Feedback
 
