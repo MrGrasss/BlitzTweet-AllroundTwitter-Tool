@@ -1,4 +1,4 @@
-![Screenshot_2](https://github.com/user-attachments/assets/b976144b-13d3-4002-bf7d-4ce70a232a5f)
+![Screenshot_1](https://github.com/user-attachments/assets/06d2f808-fe4d-4994-b079-c74c82995f6b)
 
 ---
 
@@ -21,6 +21,8 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 - Mass Posts Shiller
 - Client Checker
 - Equal Follower
+- Website Changer
+- Clear Tweets
 
 ## Future:
 
@@ -57,6 +59,7 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 - **Banner Changer:** Update the banner image for your profiles.
 - **Bio Changer:** Modify the bio of your Twitter accounts.
 - **DisplayName Changer:** Change the display name of your profiles.
+- **Website Changer:** Change the website of your profiles. Must be a valid url so either "name.com" or "https://name.com"
 
 ## Tweet Actions
 
@@ -156,3 +159,4 @@ I'm open to any suggestions or feedback!
 For questions, you can always contact me on [Telegram](https://t.me/MrGrassss).
 
 ---
+
