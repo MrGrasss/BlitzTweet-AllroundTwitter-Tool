@@ -1,4 +1,4 @@
-![Screenshot_1](https://github.com/user-attachments/assets/06d2f808-fe4d-4994-b079-c74c82995f6b)
+![Screenshot_1](https://github.com/user-attachments/assets/7d6ae92d-ac44-4c05-b193-83b8089d355a)
 
 ---
 
@@ -23,6 +23,7 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 - Equal Follower
 - Website Changer
 - Clear Tweets
+- Mass Tweeter
 
 ## Future:
 
@@ -32,23 +33,25 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 
 ## Login & Setup
 
-- **Note:** Each functionality includes prompts to guide you through any prerequisites needed for it to work. This means you can use any function without having to follow a strict order.
+- **Note:** Each functionality includes prompts to guide you through any prerequisites needed for it to work. This means
+  you can use any function without having to follow a strict order.
 
 - **Proxies:** Supports sticky/rotating proxies in the following formats:
-  - `HOST:PORT@USERNAME:PASSWORD`
-  - `HOST:PORT:USERNAME:PASSWORD`
-  - `HOST:PORT`
-  
+    - `HOST:PORT@USERNAME:PASSWORD`
+    - `HOST:PORT:USERNAME:PASSWORD`
+    - `HOST:PORT`
+
 - **Tokens:** Format should be either:
-  - `username:pass:email:auth:ct0`
-  - `auth:ct0`
-  - `auth`
-  
-- **Files:** 
-  - `mass_replies/keywords.txt` expects one keyword per line.
-  - `replies/comments.txt` expects one comment per line; ensure you have more comments than clients.
-  - `post_shiller/usernames.txt` expects one username per line; one client will listen to one username.
-  - `post_shiller/comments.txt` expects one comment per line; same comments won't get reused so make sure to have a lot.
+    - `username:pass:email:auth:ct0`
+    - `auth:ct0`
+    - `auth`
+
+- **Files:**
+    - `mass_replies/keywords.txt` expects one keyword per line.
+    - `replies/comments.txt` expects one comment per line; ensure you have more comments than clients.
+    - `post_shiller/usernames.txt` expects one username per line; one client will listen to one username.
+    - `post_shiller/comments.txt` expects one comment per line; same comments won't get reused so make sure to have a
+      lot.
 
 - **Removed Tokens:** Saved in `acc_checker/removed_tokens.txt`.
 - **Locked Tokens:** Saved in `acc_checker/locked_tokens.txt`.
@@ -59,47 +62,57 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 - **Banner Changer:** Update the banner image for your profiles.
 - **Bio Changer:** Modify the bio of your Twitter accounts.
 - **DisplayName Changer:** Change the display name of your profiles.
-- **Website Changer:** Change the website of your profiles. Must be a valid url so either "name.com" or "https://name.com"
+- **Website Changer:** Change the website of your profiles. Must be a valid url so either "name.com"
+  or "https://name.com"
 
 ## Tweet Actions
 
 - **Tweet Liker:** Automatically like tweets.
 - **Tweet Replier:** Reply to tweets based on specified keywords.
-
+- **Mass Tweeter:** Sends out the same tweets with as many accounts as you want.
 
 ## Mass Actions
 
 - **Mass Tweet Replier:** Bulk reply to multiple tweets fetched by keywords set in mass_replies/keywords.tx.
 - **Mass Follower:** Follow multiple accounts in bulk.
 - **Mass Retweeter:** Retweet tweets in bulk.
-- **Mass Posts Shiller:** Listens to new posts and shills mass comments to them and likes + rts these comments with idle accounts.
+- **Mass Posts Shiller:** Listens to new posts and shills mass comments to them and likes + rts these comments with idle
+  accounts.
+- **Mass Tweeter:** Post tweets with media and tagged users in bulk.
 
 ## Mass Posts Shiller
 
 ### Overview:
-The Mass Posts Shiller feature automates the process of monitoring new posts from specified usernames, posting multiple comments on these new posts, and liking and retweeting these comments using idle accounts.
+
+The Mass Posts Shiller feature automates the process of monitoring new posts from specified usernames, posting multiple
+comments on these new posts, and liking and retweeting these comments using idle accounts.
 
 ### Prerequisites:
+
 1. **Proxies:** Ensure proxies are set up correctly in the supported formats.
 2. **Tokens:** Use the correct format for your Twitter account tokens.
 3. **Files:** Prepare the necessary files:
-   - `post_shiller/usernames.txt`: One username per line. Each client will listen to one username.
-   - `post_shiller/comments.txt`: One comment per line. Ensure you have more comments than clients to avoid reuse.
-   - `post_shiller/idl_tokens.txt`: Store your idle tokens here.
+    - `post_shiller/usernames.txt`: One username per line. Each client will listen to one username.
+    - `post_shiller/comments.txt`: One comment per line. Ensure you have more comments than clients to avoid reuse.
+    - `post_shiller/idl_tokens.txt`: Store your idle tokens here.
 
 ### Setup:
+
 1. **Username File:** Populate `post_shiller/usernames.txt` with the usernames whose posts you want to monitor.
 2. **Comments File:** Populate `post_shiller/comments.txt` with the comments to be used.
 3. **Idle Tokens:** Ensure your idle tokens are stored in `post_shiller/idl_tokens.txt`.
 4. **Configure Proxies:** Set up proxies as needed.
 
 ### How to Use:
+
 1. **Run the Mass Posts Shiller:** Launch the feature from the main menu.
 2. **Monitor New Posts:** The tool will start monitoring new posts from the specified usernames.
 3. **Shill Comments:** Once a new post is detected, the tool will post comments from `post_shiller/comments.txt`.
-4. **Like and Retweet:** The tool will use idle accounts from `post_shiller/idl_tokens.txt` to like and retweet these comments to boost engagement.
+4. **Like and Retweet:** The tool will use idle accounts from `post_shiller/idl_tokens.txt` to like and retweet these
+   comments to boost engagement.
 
 ### Example:
+
 1. Add usernames to `post_shiller/usernames.txt`:
    ```
    user1
@@ -125,32 +138,93 @@ The Mass Posts Shiller feature automates the process of monitoring new posts fro
 
 5. Run the Mass Posts Shiller and let it handle the rest!
 
+## Mass Tweeter
+
+### Overview:
+
+The Mass Tweeter feature automates the process of posting tweets with media files and tagging specified users.
+
+### Prerequisites:
+
+1. **Proxies:** Ensure proxies are set up correctly in the supported formats.
+2. **Tokens:** Use the correct format for your Twitter account tokens.
+3. **Files:** Prepare the necessary files:
+    - `mass_tweeter/media`: Store your media files in this directory.
+    - `mass_tweeter/message.txt`: Contains the message to be tweeted.
+    - `mass_tweeter/tagged_users.txt`: One username per line for the users to be tagged.
+
+### Setup:
+
+1. **Media Directory:** Place the media files you want to tweet in `mass_tweeter/media`.
+2. **Message File:** Populate `mass_tweeter/message.txt` with the tweet message.
+3. **Tagged Users File:** Populate `mass_tweeter/tagged_users.txt` with the usernames to be tagged.
+
+### Limitations:
+
+- A maximum of 4 media items in total (images, GIFs, and videos combined) can be used per tweet.
+- Tagging users through media only works on none verified and public users.
+
+### How to Use:
+
+1. **Run the Mass Tweeter:** Launch the feature from the main menu.
+2. **Select Media:** The tool will prompt you to select the number of images, GIFs, and videos to use (If there is more
+   than one gif or video else its automatic), ensuring the total does not exceed 4 media items.
+3. **Post Tweets:** The tool will read the message, media files, and tagged users, and post tweets accordingly.
+
+### Example:
+
+1. Add media files to `mass_tweeter/media` directory (randomly selected):
+   ```
+   image1.jpg
+   image2.png
+   image3.gif
+   video.mp4
+   ```
+
+2. Add message to `mass_tweeter/message.txt`:
+   ```
+   Check out our latest updates! 😁
+   ```
+
+3. Add tagged users to `mass_tweeter/tagged_users.txt`:
+   ```
+   user1
+   user2
+   user3
+   ```
+
+4. Ensure your proxies and tokens are configured properly.
+
+5. Run the Mass Tweeter and let it handle the rest!
+
 ## Equal Follower
 
 **Description:**
 
-The Equal Follower feature allows you to distribute a list of usernames across multiple Twitter accounts, 
-ensuring that each account follows a unique set of users without any overlap. 
+The Equal Follower feature allows you to distribute a list of usernames across multiple Twitter accounts,
+ensuring that each account follows a unique set of users without any overlap.
 
 **How It Works:**
 
 1. **Upload Usernames:**
-   - Fill equal_follower/usernames.txt with the usernames you want to follow. (1 per line) 
+    - Fill equal_follower/usernames.txt with the usernames you want to follow. (1 per line)
 
 2. **Set Parameters:**
-   - Specify the number of tokens (Twitter accounts) to use.
-   - Define the number of usernames each token should follow.
+    - Specify the number of tokens (Twitter accounts) to use.
+    - Define the number of usernames each token should follow.
 
 3. **Distribute Follows:**
-   - The Equal Follower will allocate usernames to each account sequentially, ensuring no duplicates.
+    - The Equal Follower will allocate usernames to each account sequentially, ensuring no duplicates.
 
 **Usage Example:**
+
 - You have a usernames.txt file of 500 usernames.
 - You want to use 10 accounts, each following 50 users.
 - Equal Follower will ensure each of the 10 accounts follows a unique set of 50 users.
 
 **Caution**
-- A fresh account can follow up to 50 people per day and a warmed up account up to 80. 
+
+- A fresh account can follow up to 50 people per day and a warmed up account up to 80.
 
 ## Suggestions / Feedback
 
@@ -159,4 +233,3 @@ I'm open to any suggestions or feedback!
 For questions, you can always contact me on [Telegram](https://t.me/MrGrassss).
 
 ---
-
