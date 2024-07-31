@@ -1,4 +1,4 @@
-![Screenshot_1](https://github.com/user-attachments/assets/7d6ae92d-ac44-4c05-b193-83b8089d355a)
+![Screenshot_1](https://github.com/user-attachments/assets/49c7abc7-9f62-41af-82bb-d585f787a206)
 
 ---
 
@@ -52,6 +52,9 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
     - `post_shiller/usernames.txt` expects one username per line; one client will listen to one username.
     - `post_shiller/comments.txt` expects one comment per line; same comments won't get reused so make sure to have a
       lot.
+    - `mass_replies/media` stores media files for replies.
+    - `mass_replies/message.txt` contains the message to be replied with.
+    - `mass_replies/tagged_users.txt` includes one username per line for users to be tagged.
 
 - **Removed Tokens:** Saved in `acc_checker/removed_tokens.txt`.
 - **Locked Tokens:** Saved in `acc_checker/locked_tokens.txt`.
@@ -73,70 +76,85 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 
 ## Mass Actions
 
-- **Mass Tweet Replier:** Bulk reply to multiple tweets fetched by keywords set in mass_replies/keywords.tx.
+- **Mass Tweet Replier:** Bulk reply to multiple tweets fetched by keywords set in `mass_replies/keywords.txt`.
 - **Mass Follower:** Follow multiple accounts in bulk.
 - **Mass Retweeter:** Retweet tweets in bulk.
 - **Mass Posts Shiller:** Listens to new posts and shills mass comments to them and likes + rts these comments with idle
   accounts.
 - **Mass Tweeter:** Post tweets with media and tagged users in bulk.
 
-## Mass Posts Shiller
+## Mass Tweet Replier
 
 ### Overview:
 
-The Mass Posts Shiller feature automates the process of monitoring new posts from specified usernames, posting multiple
-comments on these new posts, and liking and retweeting these comments using idle accounts.
+The Mass Tweet Replier feature automates the process of replying to multiple tweets based on specified keywords,
+using a list of predefined replies.
 
 ### Prerequisites:
 
 1. **Proxies:** Ensure proxies are set up correctly in the supported formats.
 2. **Tokens:** Use the correct format for your Twitter account tokens.
 3. **Files:** Prepare the necessary files:
-    - `post_shiller/usernames.txt`: One username per line. Each client will listen to one username.
-    - `post_shiller/comments.txt`: One comment per line. Ensure you have more comments than clients to avoid reuse.
-    - `post_shiller/idl_tokens.txt`: Store your idle tokens here.
+    - `mass_replies/keywords.txt`: Contains the keywords to search for tweets.
+    - `mass_replies/message.txt`: Contains the reply messages. Ensure you have enough messages to cover all tweets.
+    - `mass_replies/media`: Store any media files you want to include in the replies.
+    - `mass_replies/tagged_users.txt`: Include usernames to be tagged in your replies (one per line).
 
 ### Setup:
 
-1. **Username File:** Populate `post_shiller/usernames.txt` with the usernames whose posts you want to monitor.
-2. **Comments File:** Populate `post_shiller/comments.txt` with the comments to be used.
-3. **Idle Tokens:** Ensure your idle tokens are stored in `post_shiller/idl_tokens.txt`.
-4. **Configure Proxies:** Set up proxies as needed.
+1. **Keywords File:** Populate `mass_replies/keywords.txt` with the keywords you want to search for in tweets.
+2. **Replies File:** Populate `mass_replies/message.txt` with the reply messages.
+3. **Media Directory:** Place any media files you want to use in `mass_replies/media`.
+4. **Tagged Users File:** Populate `mass_replies/tagged_users.txt` with the usernames to be tagged in replies.
+5. **Replied Tweets File** Replied tweets are saved in `mass_replies/replied_tweets.txt` to keep track of tweets that
+   have been responded to, avoiding duplicate replies.
+
+### Limitations:
+
+- A maximum of 4 media items in total (images, GIFs, and videos combined) can be used per tweet.
+- Tagging users through media only works on non-verified and public users.
+- 100 Tweets per hour per token, tokens that reach this will be automatically removed.
 
 ### How to Use:
 
-1. **Run the Mass Posts Shiller:** Launch the feature from the main menu.
-2. **Monitor New Posts:** The tool will start monitoring new posts from the specified usernames.
-3. **Shill Comments:** Once a new post is detected, the tool will post comments from `post_shiller/comments.txt`.
-4. **Like and Retweet:** The tool will use idle accounts from `post_shiller/idl_tokens.txt` to like and retweet these
-   comments to boost engagement.
+1. **Run the Mass Tweet Replier:** Launch the feature from the main menu.
+2. **Search and Reply:** The tool will search for tweets containing the keywords from `mass_replies/keywords.txt`,
+   and reply with messages from `mass_replies/message.txt`.
+3. **Include Media and Tags:** If configured, the tool will attach media files from `mass_replies/media` and tag users
+   in media from `mass_replies/tagged_users.txt`.
 
 ### Example:
 
-1. Add usernames to `post_shiller/usernames.txt`:
+1. Add keywords to `mass_replies/keywords.txt`:
+   ```
+   #keyword1
+   #keyword2
+   ```
+
+2. Add replies to `mass_replies/message.txt`:
+   ```
+   Great insight!
+   Thanks for the info!
+   Really useful post!
+   ```
+
+3. Add media files to `mass_replies/media` directory (if any):
+   ```
+   image1.jpg
+   video.mp4
+   ```
+
+4. Add tagged users to `mass_replies/tagged_users.txt`:
    ```
    user1
    user2
    user3
    ```
 
-2. Add comments to `post_shiller/comments.txt`:
-   ```
-   Great post!
-   Very informative.
-   Thanks for sharing!
-   ```
+5. Ensure your proxies and tokens are configured properly.
 
-3. Add idle tokens to `post_shiller/idl_tokens.txt`:
-   ```
-   auth1:ct0
-   auth2:ct0
-   auth3:ct0
-   ```
-
-4. Ensure your proxies and tokens are configured properly.
-
-5. Run the Mass Posts Shiller and let it handle the rest!
+6. **Run the Mass Tweet Replier:** The tool will process the replies and save the replied tweets in a log file. The
+   replies will be handled, skipping any already processed tweets.
 
 ## Mass Tweeter
 
@@ -162,13 +180,13 @@ The Mass Tweeter feature automates the process of posting tweets with media file
 ### Limitations:
 
 - A maximum of 4 media items in total (images, GIFs, and videos combined) can be used per tweet.
-- Tagging users through media only works on none verified and public users.
+- Tagging users through media only works on non-verified and public users.
 
 ### How to Use:
 
 1. **Run the Mass Tweeter:** Launch the feature from the main menu.
 2. **Select Media:** The tool will prompt you to select the number of images, GIFs, and videos to use (If there is more
-   than one gif or video else its automatic), ensuring the total does not exceed 4 media items.
+   than one gif or video else it’s automatic), ensuring the total does not exceed 4 media items.
 3. **Post Tweets:** The tool will read the message, media files, and tagged users, and post tweets accordingly.
 
 ### Example:
@@ -207,7 +225,7 @@ ensuring that each account follows a unique set of users without any overlap.
 **How It Works:**
 
 1. **Upload Usernames:**
-    - Fill equal_follower/usernames.txt with the usernames you want to follow. (1 per line)
+    - Fill `equal_follower/usernames.txt` with the usernames you want to follow. (1 per line)
 
 2. **Set Parameters:**
     - Specify the number of tokens (Twitter accounts) to use.
@@ -218,13 +236,15 @@ ensuring that each account follows a unique set of users without any overlap.
 
 **Usage Example:**
 
-- You have a usernames.txt file of 500 usernames.
+- You have a `usernames.txt` file of 500 usernames.
 - You want to use 10 accounts, each following 50 users.
 - Equal Follower will ensure each of the 10 accounts follows a unique set of 50 users.
 
 **Caution**
 
-- A fresh account can follow up to 50 people per day and a warmed up account up to 80.
+- A fresh account can follow up to 50 people per day and a
+
+warmed-up account up to 80.
 
 ## Suggestions / Feedback
 
