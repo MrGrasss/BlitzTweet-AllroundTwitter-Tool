@@ -1,4 +1,4 @@
-![Screenshot_1](https://github.com/user-attachments/assets/96a51590-dec3-4a0a-b2d7-1b04c5a5f73c)
+![Screenshot_3](https://github.com/user-attachments/assets/6a45a7d0-461e-4b11-a3e9-510af98d224d)
 
 ---
 
@@ -24,6 +24,8 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
 - Website Changer
 - Clear Tweets
 - Mass Tweeter
+- MassDM
+- Scraper
 
 ## Future:
 
@@ -245,6 +247,38 @@ ensuring that each account follows a unique set of users without any overlap.
 - A fresh account can follow up to 50 people per day and a
 
 warmed-up account up to 80.
+
+## Mass DM
+
+### Overview:
+
+Automate sending direct messages to users scraped by the scraper feature or to a list of specified usernames or user
+IDs.
+
+### Prerequisites:
+
+1. **Scraped Users:** Ensure users are scraped and saved in `scraper/user_info.json`.
+2. **Usernames:** Alternatively, add usernames to `mass_dm/usernames.txt` or user IDs to `mass_dm/user_ids.txt`.
+3. **Proxies:** Ensure proxies are set up correctly in the supported formats.
+
+### Setup:
+
+1. **Message Configuration:** Set up in `mass_dm/config.json` and `mass_dm/message.txt`. Emojis can be added like this
+   ❤️.
+2. **Attachments:** Store images and videos in `mass_dm/media`, one will be randomly selected.
+3. **Use Scraped Users:** Set "use_scraped_users" to "true" in `mass_dm/config.json` to use users from
+   `scraper/user_info.json`.
+
+### How to Use:
+
+1. **Run the Mass DM:** Launch the feature from the main menu.
+2. **Configure Timing:** Set `seconds_before_dm` and `dm_limit_per_acc` in `mass_dm/config.json`.
+3. **Send Messages:** The tool will read the message configuration and attachments, and send DMs accordingly.
+
+### Results:
+
+- Successful messages are saved to `mass_dm/processed(user_ids/usernames)/success.txt`, and failed ones
+  to `mass_dm/processed(user_ids/usernames)/failed.txt`. Duplicates are skipped on rerun.
 
 ## Suggestions / Feedback
 
