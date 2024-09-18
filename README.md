@@ -1,4 +1,4 @@
-![Screenshot_3](https://github.com/user-attachments/assets/6a45a7d0-461e-4b11-a3e9-510af98d224d)
+![Screenshot_2](https://github.com/user-attachments/assets/1739ed0b-e4b4-431d-8bb4-7238bac5c426)
 
 ---
 
@@ -55,7 +55,7 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
     - `post_shiller/comments.txt` expects one comment per line; same comments won't get reused so make sure to have a
       lot.
     - `mass_replies/media` stores media files for replies.
-    - `mass_replies/message.txt` contains the message to be replied with.
+    - `mass_replies/messages.txt` contains the messages to reply with.
     - `mass_replies/tagged_users.txt` includes one username per line for users to be tagged.
 
 - **Removed Tokens:** Saved in `acc_checker/removed_tokens.txt`.
@@ -98,14 +98,14 @@ using a list of predefined replies.
 2. **Tokens:** Use the correct format for your Twitter account tokens.
 3. **Files:** Prepare the necessary files:
     - `mass_replies/keywords.txt`: Contains the keywords to search for tweets.
-    - `mass_replies/message.txt`: Contains the reply messages. Ensure you have enough messages to cover all tweets.
+    - `mass_replies/message.txt`: Contains the reply messages.
     - `mass_replies/media`: Store any media files you want to include in the replies.
     - `mass_replies/tagged_users.txt`: Include usernames to be tagged in your replies (one per line).
 
 ### Setup:
 
 1. **Keywords File:** Populate `mass_replies/keywords.txt` with the keywords you want to search for in tweets.
-2. **Replies File:** Populate `mass_replies/message.txt` with the reply messages.
+2. **Replies File:** Populate `mass_replies/messages.txt` with the reply messages.
 3. **Media Directory:** Place any media files you want to use in `mass_replies/media`.
 4. **Tagged Users File:** Populate `mass_replies/tagged_users.txt` with the usernames to be tagged in replies.
 5. **Replied Tweets File** Replied tweets are saved in `mass_replies/replied_tweets.txt` to keep track of tweets that
@@ -121,7 +121,9 @@ using a list of predefined replies.
 
 1. **Run the Mass Tweet Replier:** Launch the feature from the main menu.
 2. **Search and Reply:** The tool will search for tweets containing the keywords from `mass_replies/keywords.txt`,
-   and reply with messages from `mass_replies/message.txt`.
+   and reply with messages from `mass_replies/messages.txt`. Emojis are supported in the messages, and you can mark the 
+   end of a message with "---". Clients will never search on the same keywords and are automatically divided.
+   This will run forever till all clients are dead or have reached their 100 daily time limit.
 3. **Include Media and Tags:** If configured, the tool will attach media files from `mass_replies/media` and tag users
    in media from `mass_replies/tagged_users.txt`.
 
@@ -272,7 +274,8 @@ IDs.
 ### How to Use:
 
 1. **Run the Mass DM:** Launch the feature from the main menu.
-2. **Configure Timing:** Set `seconds_before_dm` and `dm_limit_per_acc` in `mass_dm/config.json`.
+2. **Configure Timing:** Set `seconds_before_dm` and `dm_limit_per_acc` in `mass_dm/config.json`. Instagram's daily DM
+   limit is 100.
 3. **Send Messages:** The tool will read the message configuration and attachments, and send DMs accordingly.
 
 ### Results:
