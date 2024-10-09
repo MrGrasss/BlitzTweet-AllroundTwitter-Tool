@@ -44,6 +44,7 @@ This is a licensed tool and can be purchased by contacting [MrGrassss](https://t
     - `HOST:PORT`
 
 - **Tokens:** Format should be either:
+    - `username:pass:email:email_pass:auth:ct0`
     - `username:pass:email:ct0:auth`
     - `auth:ct0`
     - `auth`
